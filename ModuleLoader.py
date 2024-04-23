@@ -12,5 +12,5 @@ def SubMods(ModulePath:Path,currpath):
 
 def LoadAll(package,modpath:Path,currpath:Path):
     for i in SubMods(modpath,currpath):
-        print(f"Module {package}.{i} loaded")
+        print(f"[ Auto Load ] Module {package}.{i} loaded")
         importlib.import_module(f".{i}",package)
