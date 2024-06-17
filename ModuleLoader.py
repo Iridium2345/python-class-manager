@@ -1,6 +1,8 @@
 import importlib
 from pathlib import Path
 
+import sys
+
 def SubMods(ModulePath:Path,currpath):
     for i in ModulePath.iterdir():
         if i.is_dir():
@@ -14,3 +16,5 @@ def LoadAll(package,modpath:Path,currpath:Path):
     for i in SubMods(modpath,currpath):
         print(f"[ Auto Load ] Module {package}.{i} loaded")
         importlib.import_module(f".{i}",package)
+        
+print(sys.path)
